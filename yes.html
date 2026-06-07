@@ -3,80 +3,172 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>I also like you ❤️</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+<title>She Said Yes ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
 <style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body{
-  background: linear-gradient(180deg,#ff6b81,#ffd166);
+  background: linear-gradient(180deg, #ff6b81, #ffd166);
   font-family: 'Poppins', sans-serif;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   text-align: center;
+  padding: 20px;
 }
-h1{
-  font-size: 56px;
+
+.card{
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 45px 35px;
+  border-radius: 30px;
+  max-width: 650px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
   animation: pop 1s ease forwards;
+  z-index: 2;
 }
-@keyframes pop {
-  0%{transform: scale(0);}
-  80%{transform: scale(1.1);}
-  100%{transform: scale(1);}
+
+h1{
+  font-size: 52px;
+  line-height: 1.15;
+  margin-bottom: 15px;
 }
+
+h4{
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  opacity: 0.95;
+}
+
+p{
+  font-size: 17px;
+  line-height: 1.8;
+  opacity: 0.95;
+}
+
+.highlight{
+  font-size: 34px;
+  margin: 18px 0;
+}
+
+footer{
+  position: absolute;
+  bottom: 18px;
+  font-size: 14px;
+  opacity: 0.75;
+  z-index: 2;
+}
+
 .heart{
   position: absolute;
+  bottom: -30px;
   font-size: 24px;
   animation: float 5s linear infinite;
+  z-index: 1;
 }
+
+@keyframes pop {
+  0%{
+    transform: scale(0);
+    opacity: 0;
+  }
+  80%{
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
 @keyframes float {
-  from{transform: translateY(0); opacity:1;}
-  to{transform: translateY(-800px); opacity:0;}
+  from{
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to{
+    transform: translateY(-900px);
+    opacity: 0;
+  }
+}
+
+@media(max-width: 480px){
+  .card{
+    padding: 35px 24px;
+  }
+
+  h1{
+    font-size: 38px;
+  }
+
+  h4{
+    font-size: 17px;
+  }
+
+  p{
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .highlight{
+    font-size: 28px;
+  }
 }
 </style>
 </head>
+
 <body>
-  <h1>I Love  You 2 ❤️</h1>
-  <h4>Mai koi shayar to nahi but kuch likha hai tumhare liye <h4>
-    <p>💕</p>
-  <p>Pata nahi kab shuru hua,
-par tumse baat karte hue hamesha ek alag sa sukoon milta hai.
-Tumhari baatein simple hoti hain,
-par unmein ek ajeeb sa charm hota hai, jo dil ko khinch leta hai.
 
-Kabhi sochta hoon, ye sab sirf ek coincidence hai,
-par har baar tumse baat karke lagta hai, nahi — kuch toh khaas baat hai.
+  <div class="card">
+    <h1>She said YES! Woooooo 🥳❤️</h1>
 
-Main yeh nahi keh raha ki mujhe pyaar ho gaya hai,
-bas itna keh raha hoon — tum pasand ho… wo bhi dil se, bina kisi reason ke.
+    <h4>I’m the happiest man in the world right now 😊</h4>
 
-Tumhari muskaan, tumhara andaaz, aur wo chhoti chhoti baatein —
-sab milke ek aisi feeling dete hain, jo shayad shabdon me likh nahi sakta.
+    <div class="highlight">💕</div>
 
-Bas itna samajh lo…
-tum pasand ho, aur yeh pasand kisi logic se nahi — bas dil se hai. 💕</p>
-    <footer>
-  <p>© 2025 Made with 💕 by Sidharth Sharma</p>
-</footer>
+    <p>
+      Чамтай ярилцахад нэг л дулаахан, гоё мэдрэмж төрдөг.<br>
+      Одооноос бие биенээ илүү сайн таньж,<br>
+      хамтдаа гоё мөчүүд бүтээе. 💖
+    </p>
+  </div>
 
-  
+  <footer>
+    Made with ❤️ for Munkhzul
+  </footer>
 
 <script>
 function createHeart(){
   const heart = document.createElement('div');
   heart.classList.add('heart');
-  heart.innerText = ['❤️','💖','💕','💘','💞'][Math.floor(Math.random()*5)];
+  heart.innerText = ['❤️','💖','💕','💘','💞'][Math.floor(Math.random() * 5)];
   heart.style.left = Math.random() * 100 + 'vw';
-  heart.style.animationDuration = (3 + Math.random()*3) + 's';
+  heart.style.animationDuration = (3 + Math.random() * 3) + 's';
+  heart.style.fontSize = (18 + Math.random() * 18) + 'px';
+
   document.body.appendChild(heart);
-  setTimeout(()=>heart.remove(),5000);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 6000);
 }
-setInterval(createHeart,200);
+
+setInterval(createHeart, 220);
 </script>
+
 </body>
 </html>
-
-
